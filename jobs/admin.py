@@ -4,7 +4,7 @@ from .models import Persons, Partner
 
 @admin.register(Persons)
 class PersonsAdmin(admin.ModelAdmin):
-    fields = ['full_name', 'phone']
+    list_display = ['full_name', 'phone', 'date_of_birth', 'city', 'gender']
 
 
 @admin.register(Partner)
