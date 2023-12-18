@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ person.full_name }}</h1>
+    <p>Телефон: {{ person.phone }}</p>
+    <p>Дата рождения: {{ person.date_of_birth }}</p>
+    <p>Пол: {{ person.get_gender_display }}</p>
+    <p>Город: {{ person.city }}</p>
+    <p>Размер одежды: {{ person.size }}</p>
+    <p>Последнее место работы: {{ person.last_job }}</p>
+    <p>Время создания: {{ person.time_create }}</p>
+    <p>Время изменения: {{ person.time_update }}</p>
+
+    <!-- Дополнительные поля и информация по вашему усмотрению -->
+
+    <a href="{% url 'partners' %}">Вернуться к списку</a>
+
+{% endblock %}

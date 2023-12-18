@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- persons_table.html -->
+
+
+<table>
+  <thead>
+    <tr>
+      <th>ФИО</th>
+      <th>Телефон</th>
+      <th>Дата рождения</th>
+      <th>Пол</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for person in persons %}
+      <tr>
+        <td><a href="{% url 'person_detail' person.id %}">{{ person.full_name }}</a></td>
+        <td>{{ person.phone }}</td>
+        <td>{{ person.date_of_birth }}</td>
+        <td>{{ person.get_gender_display }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+{% endblock %}

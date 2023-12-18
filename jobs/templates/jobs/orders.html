@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Номер заявки</th>
+      <th>Департамент</th>
+      <th>Локация</th>
+      <th>Вакансия</th>
+      <th>Статус</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for order in orders %}
+      <tr>
+        <td><a href="{% url 'order_detail' order.id %}">{{ order.order_name }}</a></td>
+        <td>{{ order.department }}</td>
+        <td>{{ order.location }}</td>
+        <td>{{ order.vacancy }}</td>
+        <td>{{ order.get_status_display }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+{% endblock %}

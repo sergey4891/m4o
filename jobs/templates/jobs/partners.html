@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Предприятие</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for partner in partners %}
+      <tr>
+        <td><a href="{% url 'partner_detail' partner.id %}">{{ partner.name_legal_entity }}</a></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+{% endblock %}

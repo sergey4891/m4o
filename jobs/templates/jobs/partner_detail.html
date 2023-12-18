@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   <h1>{{ object.name_legal_entity }}</h1>
+  <ul>
+    <li>ОГРН: {{ object.ogrn }}</li>
+    <li>Адрес: {{ object.legal_address }}</li>
+    <li>ИНН: {{ object.inn }}</li>
+    <li>КПП: {{ object.kpp }}</li>
+    <li>Банк: {{ object.bank }}</li>
+    <li>р/с: {{ object.p_s }}</li>
+    <li>к/с: {{ object.k_s }}</li>
+    <li>БИК: {{ object.bik }}</li>
+  </ul>
+  <a href="{% url 'partners' %}">Вернуться к списку</a>
+
+{% endblock %}

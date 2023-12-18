@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Детали заявки #{{ order.order_name }} - {{ order.vacancy }}</h1>
+  <ul>
+    <li><strong>Номер заявки:</strong> {{ order.order_name }}</li>
+    <li><strong>Департамент:</strong> {{ order.department }}</li>
+    <li><strong>Локация:</strong> {{ order.location }}</li>
+    <li><strong>Вакансия:</strong> {{ order.vacancy }}</li>
+    <li><strong>Дата начала:</strong> {{ order.start_date }}</li>
+    <li><strong>Дата конца:</strong> {{ order.finish_date }}</li>
+    <li><strong>Начало смены:</strong> {{ order.start_time }}</li>
+    <li><strong>Конец смены:</strong> {{ order.finish_time }}</li>
+    <li><strong>Количество человек:</strong> {{ order.count_of_persons }}</li>
+    <li><strong>Договор:</strong> {{ order.dogovor }}</li>
+    <li><strong>Цена по договору:</strong> {{ order.price_per_hour }}</li>
+    <li><strong>Цена для персонала:</strong> {{ order.price_for_user }}</li>
+    <li><strong>Ответственный:</strong> {{ order.responsible_full_name }}</li>
+    <li><strong>Статус:</strong> {{ order.get_status_display }}</li>
+  </ul>
+  <a href="{% url 'orders' %}">Вернуться к списку заявок</a>
+{% endblock %}
